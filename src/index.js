@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import store from './store/store'
 
 import App from './App';
-import './App.css'
+
 // import 'antd/dist/antd.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

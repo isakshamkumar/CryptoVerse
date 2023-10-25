@@ -25,6 +25,7 @@ const CryptoDetails = () => {
     if (isFetching) return <Loader />;
   
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
+    
   
     const stats = [
       { title: 'Price to USD', value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`, icon: <DollarCircleOutlined /> },
@@ -50,9 +51,9 @@ const CryptoDetails = () => {
       <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
     </Col>
     <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
-      {time.map((date) => <Option key={date}>{date}</Option>)}
+      {time.map((date) => <Option  key={date}>{date}</Option>)}
     </Select>
-    {/* <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} /> */}
+    <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
     <Col className="stats-container">
       <Col className="coin-value-statistics">
         <Col className="coin-value-statistics-heading">
